@@ -9,6 +9,7 @@
   "author": "tolgaucar",
   "license": "ISC",
   "dependencies": {
+    "express-handlebars": "^6.0.7",
     "express.js": "^1.0.0"
   }
 }
