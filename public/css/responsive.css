@@ -1,0 +1,133 @@
+@media screen and (max-width: 992px) {
+	.navbar {
+		justify-content: center;
+		width: 100%;
+		margin: auto auto 50px auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.logo {
+		font-size: 35px;
+		margin-bottom: 15px;
+		text-align: center;
+		margin-left: 0px;
+	}
+
+	.nav-links ul {
+		text-align: center;
+		margin: auto;
+		flex-direction: column;
+		margin: auto;
+		display: flex;
+	}
+
+	.nav-links ul li {
+		width: 200px;
+		border-radius: 20px;
+		margin: 15px auto auto auto;
+		background: rgba(174, 148, 148, 0.128);
+		font-size: 20px;
+		padding: 0.6rem;
+	}
+
+	.container {
+		margin: auto;
+		width: 100%;
+	}
+
+	body {
+		width: 100%;
+	}
+
+	.homepage {
+		margin-top: 20px;
+		flex-direction: column;
+	}
+
+	#title {
+		font-size: 30px;
+	}
+	.left {
+		font-size: 10px;
+		margin: 20px auto auto auto;
+	}
+	.right {
+		text-align: center;
+	}
+
+	.right img {
+		width: 50%;
+	}
+
+	.movieContainer {
+		margin-bottom: 20px;
+		width: 70%;
+		margin-top: 20px;
+		display: grid;
+		grid-template-columns: auto;
+	}
+
+	.bottomMovies {
+		margin-bottom: 20px;
+	}
+
+	.announcements {
+		margin-bottom: 20px;
+	}
+
+	.campaigns {
+		margin-top: 40px;
+	}
+
+	.campaignBox {
+		margin: auto;
+		flex-direction: column;
+		width: 50%;
+	}
+
+	.campaignRight {
+		width: 100%;
+	}
+
+	.socials {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.socials a {
+		margin: auto;
+	}
+
+	.footer {
+		margin-top: 100px;
+		padding: 0;
+	}
+
+	.allMovieBox {
+		margin: auto;
+		width: 80%;
+		margin-top: 50px;
+		flex-direction: column;
+	}
+
+	.movieImg {
+		display: none;
+	}
+
+	.aboutus {
+		width: 80%;
+		margin: auto;
+		text-align: center;
+	}
+
+	.contactform {
+		margin: auto;
+		width: 70%;
+		flex-direction: column;
+	}
+	iframe {
+		margin-bottom: 50px;
+		width: 100%;
+	}
+}

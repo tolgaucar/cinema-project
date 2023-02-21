@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap");
+
+* {
+	color: white;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	font-family: Montserrat;
+	text-decoration: none;
+}
+
+body {
+	background: #c31432; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #240b36, #c31432); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#240b36,
+		#c31432
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+	margin: 5rem auto;
+	width: 1200px;
+}
+
+.navbar {
+	margin: auto;
+	width: 1200px;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 2rem;
+}
+
+.nav-links ul {
+	display: flex;
+}
+
+.nav-links ul li {
+	margin-left: 2rem;
+}
+
+#title {
+	font-size: 40px;
+}
+
+#subtitle {
+	color: rgb(201, 199, 199);
+}
+
+.logo {
+	font-weight: 700;
+}
+
+.homepage {
+	display: flex;
+	justify-content: space-between;
+}
+
+.left {
+	margin-top: 5rem;
+	width: 60%;
+}
+
+.movieContainer {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	row-gap: 40px;
+}
+
+.right img {
+	animation: tada;
+	animation-duration: 2s;
+}
+
+.movie {
+	margin-right: 20px;
+	position: relative;
+	text-align: center;
+	justify-content: center;
+	transition: 0.5s ease;
+	height: 400px;
+	background-size: cover;
+	border: 3px solid;
+	border-image: linear-gradient(to right, #e100ff, #7f00ff) 30;
+}
+
+.movie:hover {
+	transition: 0.5s ease;
+	opacity: 0.6;
+	background-color: rgb(128, 128, 128);
+}
+
+.movieTitle {
+	margin: auto;
+	background-color: #8000ffb0;
+	text-align: center;
+	width: 100%;
+	height: 25px;
+}
+
+.hiddenMovieTime {
+	background-color: #000000b0;
+	left: 45%;
+	position: absolute;
+	bottom: 2px;
+	transition: 0.5s ease;
+	justify-content: center;
+	margin: auto;
+}
+
+.announcebox {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	justify-content: center;
+	color: white;
+	width: 100%;
+	text-align: center;
+	background-color: rgb(255, 0, 153);
+}
+
+.campaignContainer {
+	display: grid;
+	grid-template-columns: auto;
+	row-gap: 1.5rem;
+}
+
+.campaignBox {
+	justify-content: center;
+	display: flex;
+	padding: 4rem 4rem 4rem 4rem;
+	justify-content: space-between;
+	background: #8e2de2; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#4a00e0,
+		#8e2de2
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border-radius: 7px;
+}
+
+.campaignRight {
+	width: 50%;
+}
+
+.campaignLeft {
+	margin: auto;
+}
+
+.footer {
+	padding: 1rem;
+	text-align: center;
+}
+
+.socials {
+	margin-top: 12px;
+}
+
+.fa {
+	padding: 20px;
+	font-size: 30px;
+	width: 30px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	border-radius: 50%;
+}
+
+#allMovieButton {
+	text-align: center;
+	justify-content: center;
+	background: #8e2de2; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#4a00e0,
+		#8e2de2
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border-radius: 6px;
+	margin: auto;
+	width: 150px;
+	padding: 1.5rem;
+}
+
+.movieInfo {
+	width: 100%;
+}
+.allMovies {
+	display: grid;
+	grid-template-columns: auto;
+	row-gap: 40px;
+}
+
+.allMovieBox {
+	border-radius: 20px;
+	width: 100%;
+	display: flex;
+	background: #8e2de2; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#4a00e0,
+		#8e2de2
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	height: 100%;
+}
+
+.movieImg img {
+	width: 250px;
+	height: 100%;
+}
+
+.AllMovieTitle {
+	padding: 20px;
+	background-color: black;
+}
+
+.AllMovieDesc {
+	padding: 15px;
+}
+
+.buyTicket {
+	margin-top: 15px;
+	border: 2px solid white;
+	background: #8e2de2; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(
+		to right,
+		#4a00e0,
+		#8e2de2
+	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border-radius: 6px;
+	width: max-content;
+	padding: 0.5rem;
+}
+
+.aboutTitle {
+	text-align: center;
+}
+
+.aboutTitle p {
+	text-align: left;
+}
+
+.contactform {
+	border-radius: 15px;
+	padding: 2rem;
+	background: #8e2de2; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #4a00e0, #8e2de2);
+	display: flex;
+	justify-content: space-around;
+}
+
+.contactRight {
+	margin-left: 2rem;
+}
+.map {
+	margin-top: 10px;
+}
+
+.inputList {
+	display: flex;
+	flex-direction: column;
+}
+
+input {
+	color: black;
+}
+textarea {
+	color: black;
+}
+.contactinput {
+	padding: 0.3rem;
+}
+
+.contactButton {
+	margin-top: 10px;
+	border-radius: 4px;
+	border: 2px solid pink;
+	background-color: white;
+	padding: 0.5rem;
+	color: rgb(222, 2, 208);
+	font-size: 17px;
+	font-weight: bold;
+}

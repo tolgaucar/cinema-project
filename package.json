@@ -1,0 +1,11 @@
+{
+  "name": "cinema",
+  "version": "1.0.0",
+  "description": "A corporate website with an about us page showing upcoming movies for a local cinema business.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tolgaucar",
+  "license": "ISC"
+}
