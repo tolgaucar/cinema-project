@@ -6,3 +6,5 @@ const CampaignSchema = new CampaignSchema({
 });
 
 module.exports = mongoose.model('Campaign', CampaignSchema);
+
+// schema prepared.
