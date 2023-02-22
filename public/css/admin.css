@@ -1,0 +1,27 @@
+.loginPanel{
+    margin-top: 7rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.loginPanel .form-input {
+    margin-top: 0.7rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.loginPanel .form-input input{
+    margin: auto;
+    padding: 10px;
+    display: block;
+}
+
+.loginPanel .form-input button{
+    margin-top: 10px;
+    background-color: purple;
+    padding: 10px 15px;
+    text-decoration: none;
+    border: 0.4px solid white;
+    border-radius: 10px;
+    
+}
