@@ -6,6 +6,7 @@ const port = 3000;
 const hostname = 'localhost';
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const fileUpload = require('express-fileupload');
 
 main().catch(err => console.log(err));
 
@@ -15,6 +16,7 @@ async function main() {
 }
 
 
+app.use(fileUpload());
 app.use(express.static('public'));
 
 app.engine('handlebars', handlebars.engine());
