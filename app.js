@@ -20,26 +20,8 @@ app.engine('handlebars', handlebars.engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
-app.get('/', (req, res) => {
-    res.render('front/index');
-});
-
-app.get('/hakkimizda', (req,res) =>{
-    res.render('front/hakkimizda');
-})
-
-app.get('/filmler', (req,res) =>{
-    res.render('front/filmler');
-})
-
-app.get('/iletisim', (req,res) =>{
-    res.render('front/iletisim');
-})
-
-app.get('/admin', function(req, res) {
-    res.render('back/admin', {layout: 'back.handlebars'});
-});
-
+const mainRoutes = require('./routes/main');
+app.use('/', mainRoutes);
 
 app.listen(port, hostname, (req, res) => {
     console.log('listening on port  ' + port); 
