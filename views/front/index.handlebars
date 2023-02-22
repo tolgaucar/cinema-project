@@ -21,27 +21,16 @@
 		<div class="container" style="text-align: center">
 			<h1>Vizyondaki Filmler</h1>
 		</div>
-
 		<section class="movies">
 			<div class="container movieContainer">
+				{{#each movies}}
 				<div style="background-image: url('img/movie1.jpeg')" class="movie">
-					<div class="movieTitle">Film İsmi</div>
+					<div class="movieTitle">{{title}}</div>
 					<div class="hiddenMovieTime">
-						<b>21:00</b>
+						<b>{{time}}</b>
 					</div>
 				</div>
-				<div style="background-image: url('img/movie3.jpeg')" class="movie">
-					<div class="movieTitle">Film İsmi</div>
-					<div class="hiddenMovieTime">
-						<b>21:00</b>
-					</div>
-				</div>
-				<div style="background-image: url('img/movie2.jpeg')" class="movie">
-					<div class="movieTitle">Film İsmi</div>
-					<div class="hiddenMovieTime">
-						<b>21:00</b>
-					</div>
-				</div>
+				{{/each}}
 			</div>
 
 			<div class="container bottomMovies">

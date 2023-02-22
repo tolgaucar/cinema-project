@@ -1,8 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const Movie = require('../models/Movie');
+
 
 router.get('/', (req, res) => {
-    res.render('front/index');
+
+    Movie.find({}).lean().limit(3).then(movies =>{
+        res.render('front/index', {movies:movies})
+    });
+
 });
 
 router.get('/hakkimizda', (req,res) =>{
