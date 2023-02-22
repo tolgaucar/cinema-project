@@ -25,3 +25,30 @@
     border-radius: 10px;
     
 }
+
+/* Add Movie Page */
+.addMoviePanel{
+    width: 300px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.307);
+    justify-content: center;
+    margin: 4rem auto auto auto;
+    text-align: center;
+}
+
+.addMoviePanel .form-input input:first-child{
+    margin-top: 5px;
+}
+
+.addMoviePanel .form-input input{
+    width: 200px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.addMoviePanel .form-input button{
+    background-color: purple;
+    border: 0.4px solid white;
+    border-radius: 5px;
+    padding: 12px;
+}

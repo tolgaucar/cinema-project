@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 const hostname = 'localhost';
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 main().catch(err => console.log(err));
 
@@ -20,8 +21,17 @@ app.engine('handlebars', handlebars.engine());
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
+const adminRoutes = require('./routes/admin');
 const mainRoutes = require('./routes/main');
 app.use('/', mainRoutes);
+app.use('/admin', adminRoutes);
+
 
 app.listen(port, hostname, (req, res) => {
     console.log('listening on port  ' + port); 

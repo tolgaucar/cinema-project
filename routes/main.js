@@ -17,8 +17,7 @@ router.get('/iletisim', (req,res) =>{
     res.render('front/iletisim');
 })
 
-router.get('/admin', function(req, res) {
-    res.render('back/admin', {layout: 'back.handlebars'});
-});
+
+
 
 module.exports = router
