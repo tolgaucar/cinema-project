@@ -7,7 +7,8 @@ const hostname = 'localhost';
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
-const expressSession = require('express-session');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 main().catch(err => console.log(err));
 
@@ -16,17 +17,16 @@ async function main() {
   await mongoose.connect('mongodb://localhost:27017/test');
 }
 
+// express-session
+app.use(session({
+  secret: 'githubtolgaucar',
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
+}));
 
 app.use(fileUpload());
 app.use(express.static('public'));
 
-// express-sesion
-app.use(expressSession({
-  secret: 'githubtolgaucar',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}))
+
 
 app.engine('handlebars', handlebars.engine());
 app.set('view engine', 'handlebars');
@@ -40,6 +40,7 @@ app.use(bodyParser.json())
 
 const adminRoutes = require('./routes/admin');
 const mainRoutes = require('./routes/main');
+
 app.use('/', mainRoutes);
 app.use('/admin', adminRoutes);
 
