@@ -7,6 +7,7 @@ const hostname = 'localhost';
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
+const expressSession = require('express-session');
 
 main().catch(err => console.log(err));
 
@@ -18,6 +19,14 @@ async function main() {
 
 app.use(fileUpload());
 app.use(express.static('public'));
+
+// express-sesion
+app.use(expressSession({
+  secret: 'githubtolgaucar',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
 
 app.engine('handlebars', handlebars.engine());
 app.set('view engine', 'handlebars');

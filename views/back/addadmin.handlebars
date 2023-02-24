@@ -1,13 +1,15 @@
 <body>
 
-    <div class="loginPanel">
-        <h2>Giriş Ekranı</h2>
-        <form method="post" action="/admin/login/">
+    <div class="addAdminPanel">
+        <h2>Admin Ekle</h2>
+        <form method="post"action="/admin/admins/add/process" enctype="multipart/form-data">
         <div class="form-input">
             <input name="username" type="text" placeholder="Kullanıcı adı">
             <input name="password" type="password" placeholder="Şifre">
-            <button type="submit">Giriş Yap</button>
+            <button type="submit">Admin Ekle</button>
+            <a href="/admin">Geri</a>
         </div>
+
         </form>
     </div>
     
