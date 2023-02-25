@@ -1,0 +1,27 @@
+<body>
+
+    <div class="settingsPanel">
+        <h2>Ayar Düzenle</h2>
+        <form method="post" action="/admin/settings/edit/process" enctype="multipart/form-data">
+        {{#each config}}
+        <div class="form-input">
+            <input name="title" type="text" value="{{title}}" placeholder="Başlık">
+            <input name="homepageTitle" type="text" value="{{homepageTitle}}" placeholder="Anasayfa Başlığı">
+            <input name="homepageDescription" type="text" value="{{homepageDescription}}" placeholder="Anasayfada Başlık Altı Yazı">
+            <input name="announcement" type="text" value="{{announcement}}" placeholder="Duyuru Yazısı">
+            <input name="about" type="text" value="{{about}}" placeholder="Hakkında Yazısı">
+            <input name="phone" type="text" value="{{phone}}" placeholder="Telefon Numarası">
+            <input name="address" type="text" value="{{address}}" placeholder="Adres">
+            <input name="iframesrc" type="text" value="{{iframesrc}}" placeholder="Iframe linki">
+            <input name="fb" type="text" value="{{fb}}" placeholder="Facebook">
+            <input name="ig" type="text" value="{{ig}}"placeholder="Instagram">
+            <input name="tw" type="text" value="{{tw}}"placeholder="Twitter">
+            <br>
+            <button type="submit">Kaydet</button>
+            <a href="/admin/panel/">Geri</a>
+        </div>
+        {{/each}}
+        </form>
+    </div>
+    
+</body>

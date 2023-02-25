@@ -105,3 +105,48 @@
     background-color: red;
     color: white;
 }
+
+/*  Settings */
+
+body{
+    height: 800px;
+}
+
+.settingsPanel{
+    width: 300px;
+    height: auto;
+    padding: 60px;
+    background-color: rgba(255, 255, 255, 0.307);
+    justify-content: center;
+    margin: 4rem auto auto auto;
+    text-align: center;
+}
+
+.settingsPanel .form-input input:first-child{
+    margin-top: 5px;
+}
+
+.settingsPanel .form-input input{
+    width: 200px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.settingsPanel .form-input button{
+    background-color: purple;
+    border: 0.4px solid white;
+    border-radius: 5px;
+    padding: 12px;
+}
+
+/* Message */
+
+.message{
+    margin: 1rem auto 1rem auto;
+    width: 200px;
+    background-color: rgba(219, 0, 0, 0.562);
+}
+
+hr{
+    margin-bottom: 10px;
+}

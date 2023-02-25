@@ -1,14 +1,12 @@
-
-
 		<!-- HOME -->
+		{{#each siteSettings}}
 		<section class="home">
 			<div class="container homepage">
 				<div class="left">
-					<h1 id="title">Sinemanın Yeni ve Hesaplı Hali</h1>
+					
+					<h1 id="title">{{homepageTitle}}</h1>
 					<h2 id="subtitle">
-						Bazı insanlar için sinema bir tutkudur. Bu tutkuyu keyifli hale getiren Sinema Isparta karanlık
-						sinema korkusu olanlara daha ferah ortamlar, temiz & hijyenik salonlar ve aile bütçesini düşünen
-						hesaplı fiyatlar ile hizmetinizdedir.
+						{{homepageDescription}}
 					</h2>
 				</div>
 				<div class="right">
@@ -16,6 +14,7 @@
 				</div>
 			</div>
 		</section>
+		{{/each}}
 
 		<!-- MOVIES -->
 		<div class="container" style="text-align: center">
@@ -34,7 +33,7 @@
 			</div>
 
 			<div class="container bottomMovies">
-				<a href="filmler.html"><div id="allMovieButton">Bütün Filmleri Gör</div></a>
+				<a href="filmler"><div id="allMovieButton">Bütün Filmleri Gör</div></a>
 			</div>
 		</section>
 
@@ -43,11 +42,13 @@
 		<section class="announcements">
 			<div class="announcebox">
 				<p>
+					{{#each siteSettings}}
 					<marquee behavior="" direction="right"
-						><b
-							>Duyuru: 16 Haziran 2022 günü vizyona girecek olan Deadpool filmi 17 Haziran'a ertelenmiştir.</b
+						><b>
+		{{announcement}}</b
 						></marquee
 					>
+					{{/each}}
 				</p>
 			</div>
 		</section>
@@ -68,12 +69,11 @@
 					</div>
 					<div class="campaignRight">
 						<p>
-							{{title}}
+							{{description}}
 						</p>
 					</div>
 				</div>
 				{{/each}}
 			</div>
 		</section>
-
 

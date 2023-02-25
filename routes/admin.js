@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const Movie = require('../models/Movie');
+const Config = require('../models/Config');
 const Admin = require('../models/Admin');
 const Campaign = require('../models/Campaign');
+const Contact = require('../models/Contact');
 const path = require('path');
 
 
@@ -46,6 +48,24 @@ router.get('/logout', (req,res) =>{
     });
 });
 
+// Contacts
+
+router.get('/contacts', (req,res) =>{
+
+    if(req.session.loggedin != true){
+        return res.redirect('/admin/');
+    }else{
+        Contact.find({}).lean().then(messages => {
+            res.render('back/contacts', {
+                messages: messages,
+                layout: 'back.handlebars'});
+
+            console.log(messages);
+        })
+    }
+
+});
+
 // Admins
 
 router.get('/admins/add', (req, res) =>{
@@ -69,7 +89,7 @@ router.post('/admins/add/process', (req,res) =>{
             exist: true
         };
 
-        
+
     Admin.create(req.body, (error,user) =>{
         res.redirect('/admin/panel/');
     });
@@ -109,7 +129,6 @@ router.post('/movies/add/process', (req, res) => {
     
 })
 
-module.exports = router;
 
 // Campaigns
 
@@ -138,3 +157,39 @@ router.post('/campaigns/add/process', (req,res) =>{
     }
 })
 
+// Settings
+
+router.get('/settings/edit', (req, res) =>{
+    if(req.session.loggedin != true){
+        return res.redirect('/admin/');
+    }else{
+
+        Config.find({_id: '63f9e3be3dee2166a24cfa46'}).lean().limit(1).then(config =>{
+            
+            res.render('back/editSettings', {
+                config: config,
+                layout: 'back.handlebars'
+            })
+
+        });
+
+    }
+});
+
+router.post('/settings/edit/process', (req,res) =>{
+
+    if(req.session.loggedin != true){
+        return res.redirect('/admin/');
+    }else{
+
+        req.session.sessionFlash = {
+            exist: true
+        };
+
+    Config.findByIdAndUpdate({_id: '63f9e3be3dee2166a24cfa46'}, req.body, (err, config) => {
+        res.redirect('/admin/panel/');
+    });
+    }
+})
+
+module.exports = router;
