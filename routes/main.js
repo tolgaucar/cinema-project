@@ -1,12 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const Movie = require('../models/Movie');
+const Campaign = require('../models/Campaign');
 
 
 router.get('/', (req, res) => {
 
     Movie.find({}).lean().limit(3).then(movies =>{
-        res.render('front/index', {movies:movies})
+        Campaign.find({}).lean().limit(3).then(campaigns =>{
+            res.render('front/index', {
+                movies: movies,
+                campaigns: campaigns
+            })
+        });
     });
 
 });

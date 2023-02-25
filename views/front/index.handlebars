@@ -23,7 +23,7 @@
 		</div>
 		<section class="movies">
 			<div class="container movieContainer">
-				{{#each movies}}
+				{{#each movies }}
 				<div style="background-image: url('{{image}}')" class="movie">
 					<div class="movieTitle">{{title}}</div>
 					<div class="hiddenMovieTime">
@@ -60,30 +60,19 @@
 
 		<section class="campaigns">
 			<div class="container campaignContainer">
-				<div class="campaignBox">
-					<div class="campaignLeft">
-						<h2>Seçili Filmlerde %10 İndirim</h2>
-					</div>
-					<div class="campaignRight">
-						<p>
-							20 Haziran 2022 tarihine kadar seçili filmlerde %10 indirim kampanyası uygulanacaktır. Kampanya
-							koşulları çeşitlilik gösterebilmektedir. Kampanyadan her kullanıcı bir defa yararlanabilecektir.
-						</p>
-					</div>
-				</div>
 
+				{{#each campaigns}}
 				<div class="campaignBox">
 					<div class="campaignLeft">
-						<h2>Cuma Günleri Biletler %50 İndirimli!</h2>
+						<h2>{{title}}</h2>
 					</div>
 					<div class="campaignRight">
 						<p>
-							30 Haziran 2022 tarihine kadar Sinema Isparta'da Cuma günleri bilet fiyatının yarısı kampanyası
-							uygulanacaktır. Kampanya koşulları kart çeşitleri bazında değişiklik gösterebilir. Trendyol
-							kampanyayı dilediği zaman durdurma ve/veya kampanya koşullarını değiştirme hakkını saklı tutar.
+							{{title}}
 						</p>
 					</div>
 				</div>
+				{{/each}}
 			</div>
 		</section>
 

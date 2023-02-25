@@ -2,13 +2,17 @@ const express = require('express');
 const router = express.Router();
 const Movie = require('../models/Movie');
 const Admin = require('../models/Admin');
-
+const Campaign = require('../models/Campaign');
 const path = require('path');
 
 
 // Admin routes
 router.get('/', (req, res) => {
     res.render('back/admin', {layout: 'back.handlebars'});
+});
+
+router.get('/panel',    (req, res) => {
+    res.render('back/panel', {layout: 'back.handlebars'});
 });
 
 router.post('/login/', (req, res) => {
@@ -21,8 +25,9 @@ router.post('/login/', (req, res) => {
                 // Session işlemleri
                 req.session.userid = user._id;
                 req.session.loggedin = true;
-                res.redirect('/admin/movies/add');
 
+                res.redirect('/admin/panel/');
+                
             }else{
                 // Giriş Başarısız
             }
@@ -33,6 +38,12 @@ router.post('/login/', (req, res) => {
     });
 
 
+});
+
+router.get('/logout', (req,res) =>{
+    req.session.destroy(() =>{
+        res.redirect('/admin');
+    });
 });
 
 // Admins
@@ -54,9 +65,13 @@ router.post('/admins/add/process', (req,res) =>{
         return res.redirect('/admin/');
     }else{
 
+        req.session.sessionFlash = {
+            exist: true
+        };
+
+        
     Admin.create(req.body, (error,user) =>{
-        res.redirect('/admin/');
-        console.log('Post işlemi yapıldı.');
+        res.redirect('/admin/panel/');
     });
     }
 })
@@ -85,9 +100,41 @@ router.post('/movies/add/process', (req, res) => {
         image: `/img/movies/${image.name}`
     });
 
-    res.redirect('/admin/movies/add')
+    req.session.sessionFlash = {
+        exist: true
+    };
+
+    res.redirect('/admin/panel/');
     }
     
 })
 
 module.exports = router;
+
+// Campaigns
+
+router.get('/campaigns/add', (req, res) => {
+    if(req.session.loggedin != true){
+        return res.redirect('/admin/');
+    }else{
+    res.render('back/addcampaign', {layout: 'back.handlebars'});
+    }
+    
+})
+
+router.post('/campaigns/add/process', (req,res) =>{
+
+    if(req.session.loggedin != true){
+        return res.redirect('/admin/');
+    }else{
+
+        req.session.sessionFlash = {
+            exist: true
+        };
+
+    Campaign.create(req.body, (error,user) =>{
+        res.redirect('/admin/panel/');
+    });
+    }
+})
+

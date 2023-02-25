@@ -10,6 +10,7 @@ const fileUpload = require('express-fileupload');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
+
 main().catch(err => console.log(err));
 
 async function main() {
@@ -20,11 +21,22 @@ async function main() {
 // express-session
 app.use(session({
   secret: 'githubtolgaucar',
+  resave: false,
+  saveUninitialized: true,
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
+// middleware for sessions
+app.use((req, res, next) => {
+  res.locals.sessionFlash = req.session.sessionFlash;
+  delete req.session.sessionFlash;
+  next();
+});
+
+
 app.use(fileUpload());
 app.use(express.static('public'));
+
 
 
 
@@ -40,6 +52,7 @@ app.use(bodyParser.json())
 
 const adminRoutes = require('./routes/admin');
 const mainRoutes = require('./routes/main');
+const Admin = require('./models/Admin');
 
 app.use('/', mainRoutes);
 app.use('/admin', adminRoutes);
