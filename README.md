@@ -21,7 +21,7 @@ Simple and dynamic cinema business website project. Built with HTML, CSS, JS, No
 ## Contributions
 - All contributors are most welcome! This is definitely open source!
 
-## Demo
+## Screenshots
 ![ciproj](https://user-images.githubusercontent.com/53059811/221412074-42f3ec73-1a32-49fa-a330-7eacb5d36d8b.png)
 
 
