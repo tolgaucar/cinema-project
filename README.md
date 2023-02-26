@@ -1,5 +1,5 @@
-# simple-todo-app
-Simple and dynamic cinema website project. Built with HTML, CSS, JS, Node JS, MongoDB, Handlebars, Express JS.
+# cinema-project
+Simple and dynamic cinema business website project. Built with HTML, CSS, JS, Node JS, MongoDB, Handlebars, Express JS.
 
 ![cinemaproject](https://user-images.githubusercontent.com/53059811/221411855-9e95ab4b-89a4-4395-af78-a2aceb098ada.png)
 
