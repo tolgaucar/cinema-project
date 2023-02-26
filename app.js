@@ -15,7 +15,7 @@ main().catch(err => console.log(err));
 
 async function main() {
   await mongoose.set("strictQuery", false);
-  await mongoose.connect('mongodb://localhost:27017/test');
+  await mongoose.connect(process.env.MONGODB);
 }
 
 // express-session
